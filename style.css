@@ -645,7 +645,7 @@ footer {
    RESPONSIVE
 ======================================== */
 
-@media (max-width: 900px) {
+@ (max-width: 900px) {
 
     nav ul {
         display: none;
@@ -1059,6 +1059,34 @@ footer {
     .hero-content p {
         font-size: 16px;
     }
+       .materials {
+        padding: 70px 20px;
+    }
+
+    .materials .section-title h2 {
+        font-size: 30px;
+    }
+
+    .material-brand {
+        padding: 20px;
+    }
+
+    .wood-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .wood-sample img {
+        height: 130px;
+    }
+
+    .wood-modal-close {
+        top: 15px;
+        right: 20px;
+    }
+
+}
 }
 
 .texto-oculto {
