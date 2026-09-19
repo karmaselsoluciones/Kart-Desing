@@ -114,7 +114,7 @@ nav a:hover {
                 rgba(0, 0, 0, 0.55),
                 rgba(0, 0, 0, 0.55)
             ),
-            url("imagenes/Logo/Logo-mobile.jpg"); /* Imagen vertical para Móvil */
+            url("imagenes/Logo/fondo.jpg"); /* Imagen vertical para Móvil */
             
         background-size: cover;
         background-position: center;
