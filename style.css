@@ -97,7 +97,7 @@ nav a:hover {
             rgba(0, 0, 0, 0.45),
             rgba(0, 0, 0, 0.45)
         ),
-        url("file:///C:/Users/pc/Desktop/Nueva%20carpeta/imagenes/Logo/Logo.jpg");
+        url("imagenes/Logo/Logo.jpg");
 
     background-size: cover;
     background-position: center;
