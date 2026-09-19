@@ -1,0 +1,1124 @@
+
+/* ========================================
+   CONFIGURACIÓN GENERAL
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f7f5f2;
+    color: #2b2622;
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid #e5e0da;
+}
+
+nav {
+    max-width: 1200px;
+    height: 75px;
+    margin: auto;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #9a6a3a;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #2b2622;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #9a6a3a;
+}
+
+.nav-button {
+    background: #9a6a3a;
+    color: white;
+    padding: 11px 20px;
+    border-radius: 5px;
+}
+
+.nav-button:hover {
+    color: white;
+    background: #7e542d;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+    height: 100vh;
+    min-height: 650px;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("file:///C:/Users/pc/Desktop/Nueva%20carpeta/imagenes/Logo/Logo.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    padding: 40px 25px;
+    color: white;
+
+ 
+}
+
+.hero-content h1 {
+    font-size: clamp(52px, 7vw, 85px);
+    max-width: 1500px;
+    line-height: 1.05;
+    margin-bottom: 50px;
+
+    -webkit-text-stroke-width: 4px; /* Grosor del borde */
+    -webkit-text-stroke-color: black; /* Color del borde */
+
+    transform: translate(-200px, -140px);
+}
+
+.hero-content p {
+    font-size: 35px;
+    max-width: 900px;
+    line-height: 1.2;
+    margin-bottom: 40px;
+
+    transform: translate(-200px, -150px);
+}
+
+.hero-button {
+    display: inline-block;
+    background: #9a6a3a;
+    color: white;
+    padding: 15px 28px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    background: #7e542d;
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   SECCIONES GENERALES
+======================================== */
+
+section {
+    padding: 100px 25px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title span {
+    color: #9a6a3a;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-title h2 {
+    font-size: 42px;
+    margin-top: 10px;
+}
+
+.section-title p {
+    max-width: 650px;
+    margin: 15px auto 0;
+    color: #777;
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   CATEGORÍAS
+======================================== */
+
+.categories {
+    background: white;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.category {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.category img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.category:hover img {
+    transform: scale(1.08);
+}
+
+.category-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0, 0, 0, 0.75)
+        );
+
+    color: white;
+}
+
+.category-overlay h3 {
+    font-size: 23px;
+}
+
+
+/* ========================================
+   GALERÍAS DE CADA CATEGORÍA
+======================================== */
+
+.work-gallery {
+    display: none;
+    width: 100%;
+    margin: 50px auto 0;
+    padding: 40px;
+    background: #f7f5f2;
+    border-radius: 10px;
+    animation: aparecer 0.4s ease;
+}
+
+.work-gallery.active {
+    display: block;
+}
+
+.work-gallery h3 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+/* ========================================
+   FILA DE IMÁGENES
+======================================== */
+
+.image-row {
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.image-row img {
+    width: 100%;
+    height: 190px;
+
+    display: block;
+
+    object-fit: cover;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.image-row img:hover {
+    transform: scale(1.03);
+
+    box-shadow:
+        0 10px 25px
+        rgba(0, 0, 0, 0.15);
+}
+
+
+/* ========================================
+   ANIMACIÓN
+======================================== */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ========================================
+   IMAGEN AMPLIADA / MODAL
+======================================== */
+
+.image-modal {
+    position: fixed;
+    inset: 0;
+
+    background:
+        rgba(0, 0, 0, 0.88);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 9999;
+    padding: 30px;
+}
+
+.image-modal.active {
+    display: flex;
+}
+
+.image-modal img {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 5px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(0, 0, 0, 0.5);
+}
+
+
+/* ========================================
+   BOTÓN CERRAR
+======================================== */
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+
+    color: white;
+    font-size: 50px;
+    font-weight: normal;
+    cursor: pointer;
+    line-height: 1;
+
+    transition: 0.3s;
+}
+
+.close-modal:hover {
+    color: #9a6a3a;
+}
+
+
+/* ========================================
+   PRODUCTOS DESTACADOS
+======================================== */
+
+/* ========================================
+   PRODUCTOS DESTACADOS
+======================================== */
+
+.products {
+    background: #f7f5f2;
+}
+
+/* TARJETAS */
+
+.product-grid {
+    width: 90%;
+    max-width: 1050px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 15px 35px
+        rgba(0, 0, 0, 0.08);
+}
+
+/* IMAGEN */
+
+.product-image {
+    height: 330px;
+    overflow: hidden;
+    background: white;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: 0.5s;
+}
+
+.product-card:hover
+.product-image img {
+    transform: scale(1.03);
+}
+
+/* INFORMACIÓN */
+
+.product-info {
+    padding: 25px;
+}
+
+.product-info h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.product-link {
+    color: #9a6a3a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* ========================================
+   SOBRE NOSOTROS
+======================================== */
+
+.about {
+    background: white;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.about-text span {
+    color: #9a6a3a;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+.about-text h2 {
+    font-size: 42px;
+    margin: 15px 0 25px;
+}
+
+.about-text p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.features {
+    margin-top: 30px;
+}
+
+.feature {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.feature-icon {
+    color: #9a6a3a;
+    font-size: 20px;
+}
+
+
+
+/* ========================================
+   GALERÍA GENERAL
+======================================== */
+
+.gallery {
+    background: #2b2622;
+    color: white;
+}
+
+.gallery .section-title p {
+    color: #bbb;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 230px;
+    gap: 15px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+
+/* ========================================
+   CONTACTO
+======================================== */
+
+.contact {
+    background: white;
+}
+
+.contact-box {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.contact-box h2 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.contact-box p {
+    color: #777;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.contact-button {
+    display: inline-block;
+    background: #25D366;
+    color: white;
+    padding: 16px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    background: #1f1c19;
+    color: white;
+    padding: 50px 25px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.footer-info {
+    color: #aaa;
+    font-size: 14px;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+
+    nav ul {
+        display: none;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .image-row {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .category-grid,
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .image-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero-content h1 {
+        font-size: 42px;
+    }
+
+    .section-title h2,
+    .about-text h2 {
+        font-size: 32px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+/* ========================================
+   FLECHAS DEL VISOR DE IMÁGENES
+======================================== */
+
+.modal-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.9);
+    color: #2b2622;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.3s;
+
+    z-index: 10001;
+}
+
+.modal-arrow:hover {
+    background: #9a6a3a;
+    color: white;
+}
+
+.modal-prev {
+    left: 30px;
+}
+
+.modal-next {
+    right: 30px;
+}
+
+/* ========================================
+   BOTÓN CERRAR GALERÍA
+======================================== */
+
+.work-gallery {
+    position: relative;
+}
+
+.close-gallery {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+
+    width: 32px;
+    height: 32px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #2b2622;
+    color: white;
+
+    font-size: 22px;
+    line-height: 32px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.3s;
+}
+
+.close-gallery:hover {
+    background: #9a6a3a;
+    transform: scale(1.08);
+}
+
+/* ========================================
+   MATERIALES Y ACABADOS
+======================================== */
+
+.materials {
+    background: #f7f5f2;
+    padding: 100px 5%;
+}
+
+
+/* TÍTULO */
+
+.materials .section-title {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.materials .section-title span {
+    color: #9a6a3a;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.materials .section-title h2 {
+    font-size: 38px;
+    margin: 15px 0;
+    color: #222;
+}
+
+.materials .section-title p {
+    color: #777;
+    line-height: 1.6;
+}
+
+
+/* BLOQUE DE CADA MARCA */
+
+.material-brand {
+    max-width: 1150px;
+    margin: 0 auto 50px;
+
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.05);
+}
+
+
+/* NOMBRE DE LA MARCA */
+
+.brand-header {
+    display: flex;
+    align-items: flex-start; /* Mantiene ambos alineados arriba */
+    gap: 17px; /* Espacio de separación entre el texto y la imagen */
+    margin-bottom: 30px;
+
+}
+
+.brand-header h3 {
+    font-size: 50px;
+    margin: 0 0 8px;
+    color: #222;
+    padding: 20px 40px;
+}
+
+.brand-header p {
+    margin: 0;
+    color: #777;
+    max-width: 420px; /* Controla el ancho del texto para que no sea tan largo */
+    line-height: 1.5; /* Mejora la legibilidad al saltar de línea */
+    padding: 20px 40px;
+}
+
+.brand-image {
+    max-width: 200px; /* Ajusta el tamaño de la imagen según tu diseño */
+    height: auto;
+    border-radius: 8px; /* Opcional: bordes redondeados */
+}
+
+
+/* MUESTRAS */
+
+.wood-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 18px;
+}
+
+
+/* CADA MUESTRA */
+
+.wood-sample {
+
+    cursor: pointer;
+
+    background: #f7f5f2;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+
+    border: 1px solid #eee;
+}
+
+.wood-sample:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(0, 0, 0, 0.10);
+}
+
+
+/* IMAGEN DE LA MADERA */
+
+.wood-sample img {
+
+    width: 100%;
+
+    height: 150px;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* NOMBRE */
+
+.wood-sample span {
+
+    display: block;
+
+    padding: 12px;
+
+    text-align: center;
+
+    font-weight: bold;
+
+    color: #444;
+}
+
+
+/* ========================================
+   VENTANA DE MADERA
+======================================== */
+
+.wood-modal {
+
+    display: none;
+
+    position: fixed;
+
+    z-index: 9999;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        rgba(0, 0, 0, 0.85);
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* CONTENIDO */
+
+.wood-modal-content {
+
+    position: relative;
+
+    max-width: 800px;
+
+    width: 90%;
+
+    text-align: center;
+
+    color: white;
+}
+
+
+/* IMAGEN GRANDE */
+
+.wood-modal-content img {
+
+    max-width: 100%;
+
+    max-height: 75vh;
+
+    border-radius: 8px;
+
+    object-fit: contain;
+}
+
+
+/* TÍTULO */
+
+.wood-modal-content h3 {
+
+    margin-top: 15px;
+
+    font-size: 24px;
+}
+
+
+/* X */
+
+.wood-modal-close {
+
+    position: absolute;
+
+    top: 25px;
+    right: 40px;
+
+    color: white;
+
+    font-size: 40px;
+
+    cursor: pointer;
+
+    z-index: 10000;
+}
+
+
+/* ========================================
+   CELULARES
+======================================== */
+
+@media (max-width: 900px) {
+
+    .wood-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .materials {
+
+        padding: 70px 20px;
+
+    }
+
+    .materials .section-title h2 {
+
+        font-size: 30px;
+
+    }
+
+    .material-brand {
+
+        padding: 20px;
+
+    }
+
+    .wood-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 12px;
+
+    }
+
+    .wood-sample img {
+
+        height: 130px;
+
+    }
+
+    .wood-modal-close {
+
+        top: 15px;
+        right: 20px;
+
+    }
+
+}
+
+.texto-oculto {
+    display: none;
+}
+
+.texto-oculto.active {
+    display: inline !important;
+    color: inherit !important;
+    font-weight: inherit !important;
+    letter-spacing: inherit !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+}
+
+.about-item {
+    margin-top: 20px; 
+}
+
+.about-item h3 {
+    margin-top: 0;
+    margin-bottom: 5px; 
+}
+
+.about-item p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.ver-mas {
+    display: inline;
+    color: #9a6a3a;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 4px;
+}
+
+.ver-mas:hover {
+    text-decoration: underline;
+}
+
+.ver-mas.abierto {
+    display: inline;
+    margin-top: 0;
+    margin-left: 5px;
+}
