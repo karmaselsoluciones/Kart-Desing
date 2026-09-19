@@ -1059,26 +1059,22 @@ footer {
     .hero-content p {
         font-size: 16px;
     }
-       .materials {
-        padding: 70px 20px;
+.materials {
+        padding: 50px 15px;
     }
-
-    .materials .section-title h2 {
-        font-size: 30px;
-    }
-
-    .material-brand {
-        padding: 20px;
-    }
-
     .wood-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-        gap: 12px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px; 
     }
 
     .wood-sample img {
-        height: 130px;
+        height: 80px; 
+        object-fit: cover;
+    }
+
+    .wood-sample span {
+        padding: 6px 2px;
+        font-size: 11px;
     }
 
     .wood-modal-close {
@@ -1086,7 +1082,6 @@ footer {
         right: 20px;
     }
 
-}
 }
 
 .texto-oculto {
