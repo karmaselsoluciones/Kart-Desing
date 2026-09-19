@@ -1057,6 +1057,21 @@ footer {
 
 @media (max-width: 900px) {
 
+   .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: 280px; /* Reducido de 500px a 280px */
+        object-fit: cover;
+    }
+
+    .about-text {
+        width: 100%;
+    }
+
     .wood-grid {
 
         grid-template-columns:
