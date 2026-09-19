@@ -97,7 +97,6 @@ nav a:hover {
             rgba(0, 0, 0, 0.45),
             rgba(0, 0, 0, 0.45)
         ),
-        linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
         url("imagenes/Logo/Logo.jpg");
 
     background-size: cover;
@@ -105,6 +104,21 @@ nav a:hover {
 
     display: flex;
     align-items: center;
+}
+
+/* Imagen para Celulares */
+@media (max-width: 600px) {
+    .hero {
+        background:
+            linear-gradient(
+                rgba(0, 0, 0, 0.55),
+                rgba(0, 0, 0, 0.55)
+            ),
+            url("imagenes/Logo/Logo-mobile.jpg"); /* Imagen vertical para Móvil */
+            
+        background-size: cover;
+        background-position: center;
+    }
 }
 
 .hero-content {
