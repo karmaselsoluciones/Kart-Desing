@@ -108,6 +108,28 @@ nav a:hover {
 
 /* Imagen para Celulares */
 @media (max-width: 600px) {
+
+   .brand-image {
+        display: none !important;
+    }
+
+    .brand-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .brand-header h3,
+    .brand-header p {
+        padding: 0; 
+        max-width: 100%;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
     .hero {
         background:
             linear-gradient(
