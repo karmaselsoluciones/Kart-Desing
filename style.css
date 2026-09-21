@@ -109,6 +109,18 @@ nav a:hover {
 /* Imagen para Celulares */
 @media (max-width: 600px) {
 
+
+   .nav-links, 
+    nav ul,
+    header nav {
+        display: none !important;
+    }
+
+    header {
+        justify-content: center;
+        padding: 15px 20px;
+    }
+   
    .brand-image {
         display: none !important;
     }
